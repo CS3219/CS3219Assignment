@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>CV Analyser</title>
+<style type="text/css">
+body {
+	background-image: url("bg-image.jpg");
+	background-color: #003752;
+}
+
+#header, #footer {
+	font-size: large;
+	padding: 0.3em;
+	background: #000000;
+}
+
+table {
+	margin: 120px;
+	padding-top: 2px;
+	padding-bottom: 120px;
+	padding-right: 40px;
+	padding-left: 40px;
+	background-color: #ffffff;
+	border: 2px solid black;
+	opacity: 0.7;
+	filter: alpha(opacity = 60);
+}
+
+td {
+	padding: 10px;
+}
+</style>
+</head>
+
+<body>
+	<div align="center">
+		<form action="Servlet" method="post" enctype="multipart/form-data">
+			<table>
+				<tr>
+					<td style="border-bottom: 1pt solid black; height: 20px"
+						colspan="2">
+						<h1>CV Analyser:</h1>
+					</td>
+				</tr>
+				<tr>
+					<td align="center"><font size="2.5"><b>Job
+								Position: </b></font></td>
+					<td><input type="text" name="job_position" id="job_position"
+						style="width: 295px; height: 28px" required /></td>
+				</tr>
+				<tr>
+					<td align="center"><font size="2.5"><b>Job
+								Description:</b></font></td>
+					<td><input type="file" name="upload_jobdesc"
+						accept="application/pdf" style="width: 295px; height: 28px"
+						required /></td>
+				</tr>
+				<tr>
+					<td align="center" style="padding-top: 20px"><font size="2.5"><b>CV:</b></font></td>
+					<td style="padding-top: 20px"><input type="file"
+						multiple="multiple" name="cv_uploads[]" id="cv_uploads"
+						onchange="uploadOnChange()" accept="application/pdf"
+						style="width: 295px; height: 28px" required /></td>
+				</tr>
+				<tr>
+					<td colspan="2"><font size="4"><b>Uploaded CVs: </b></font></td>
+				</tr>
+				<tr>
+					<td colspan="2"><ul name="cvList" id="cvList"></ul></td>
+				</tr>
+				<tr>
+					<td align="right" colspan="2"><input type="submit"
+						value="Submit"></td>
+				</tr>
+		</form>
+
+	</div>
+
+	<script>
+		function uploadOnChange() {
+			var files = document.getElementById("cv_uploads").files;
+			for (var i = 0; i < files.length; i++) {
+				var node = document.createElement("LI");
+				var textnode = document.createTextNode(files[i].name);
+				node.appendChild(textnode);
+				document.getElementById("cvList").appendChild(node);
+			}
+
+		}
+	</script>
+</body>
+<footer></footer>
+</html>
