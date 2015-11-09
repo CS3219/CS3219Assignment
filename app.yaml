@@ -1,0 +1,12 @@
+application: cv
+version: 1
+runtime: php55
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /$
+  script: WebContent\index.html
+
+- url: /Servlet$
+  script: src\com\ui\Servlet.java
