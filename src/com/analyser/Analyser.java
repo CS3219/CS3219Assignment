@@ -1,4 +1,4 @@
-package com.anayser;
+package com.analyser;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
