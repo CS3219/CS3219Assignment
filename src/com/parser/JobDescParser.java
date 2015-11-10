@@ -33,21 +33,7 @@ public class JobDescParser {
 		Headers.add(2, "preferred qualifications");	
 	}
 	
-	/*
-	public static void main(String[] args) {
-		JobDescParser jp = new JobDescParser();
-		JobDescObject jdo = jp.parseJobDesc("C:\\Users\\x\\Documents\\CVAnalyser1\\sample\\JobDesc1.txt");
-		ArrayList<ParsedObject> po = jdo.getBonusSkills();
-		ArrayList<String> words;
-		for(int i=0;i<po.size();i++) {
-			System.out.println("Type: "+po.get(i).getType());
-			words = po.get(i).getWords();
-			for(int j=0;j<words.size();j++) {
-				System.out.println(words.get(j));
-			}
-			
-		}
-	} */
+	
 	public JobDescObject parseJobDesc(String fileName) {
 				PreProcessor pp = new PreProcessor();
 				ArrayList<String> lines = pp.preprocess(fileName);
