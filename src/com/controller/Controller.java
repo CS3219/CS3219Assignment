@@ -22,7 +22,7 @@ static ArrayList<CVObject> cvs = new ArrayList<CVObject>();
 		for(ArrayList<String> row : resultList){
 			result+=("Candidate " + i + ":\n");
 			result+=("Name: " + row.get(0));
-			result+=("Rating: " + row.get(1) + "/10\n\n");
+			result+=("Rating: " + row.get(1) + "\n\n");
 			i++;
 		}
 		
